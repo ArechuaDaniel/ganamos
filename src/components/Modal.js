@@ -4,7 +4,7 @@ import { ExclamationIcon } from "@heroicons/react/outline";
 import useCalculo from "../hooks/useCalculo";
 
 export default function Modal() {
-  // const [open, setOpen] = useState(true);
+  
   const {
     modalFormulario,
     handleModal,
@@ -15,12 +15,10 @@ export default function Modal() {
     gananciaAgranda,
     gananciaTotal,
     setTotalPagar,
-    setGananciaTotal
-   
+    setGananciaTotal,
   } = useCalculo();
   setTotalPagar(pagar + pagarAgranda);
   setGananciaTotal(ganancia + gananciaAgranda);
- 
 
   return (
     <Transition.Root show={modalFormulario} as={Fragment}>
@@ -82,30 +80,46 @@ export default function Modal() {
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
                           Valores a pagar Normales:
-                          <span className="font-bold"> {parseFloat(pagar).toFixed(2)} </span>
+                          <span className="font-bold">
+                            {" "}
+                            {parseFloat(pagar).toFixed(2)}{" "}
+                          </span>
                         </p>
                         <p className="text-sm text-gray-500">
-                          Valores a pagar por Agranda Ya: <span className="font-bold">{parseFloat(pagarAgranda).toFixed(2)} </span>
+                          Valores a pagar por Agranda Ya:{" "}
+                          <span className="font-bold">
+                            {parseFloat(pagarAgranda).toFixed(2)}{" "}
+                          </span>
                         </p>
                         <p className="text-sm text-gray-500 pb-5">
-                          Total a Pagar: <span className="font-bold text-xl">{parseFloat(totalPagar).toFixed(2)}</span> 
+                          Total a Pagar:{" "}
+                          <span className="font-bold text-xl">
+                            {parseFloat(totalPagar).toFixed(2)}
+                          </span>
                         </p>
                         <Dialog.Title
-                        as="h3"
-                        className="text-lg leading-6 font-medium text-gray-900"
-                      >
-                        Valor a Ganar
-                      </Dialog.Title>
+                          as="h3"
+                          className="text-lg leading-6 font-medium text-gray-900"
+                        >
+                          Valor a Ganar
+                        </Dialog.Title>
                         <p className="text-sm text-gray-500">
-                          Ganancia Normal:<span className="font-bold">{parseFloat(ganancia).toFixed(2)}</span> 
+                          Ganancia Normal:
+                          <span className="font-bold">
+                            {parseFloat(ganancia).toFixed(2)}
+                          </span>
                         </p>
                         <p className="text-sm text-gray-500">
-                          Ganancia por Agranda Ya: <span className="font-bold">
-                          {parseFloat(gananciaAgranda).toFixed(2)}</span> 
+                          Ganancia por Agranda Ya:{" "}
+                          <span className="font-bold">
+                            {parseFloat(gananciaAgranda).toFixed(2)}
+                          </span>
                         </p>
                         <p className="text-sm text-gray-500">
-                          Ganancia Total: <span className="font-bold text-xl">
-                          {parseFloat(gananciaTotal).toFixed(2)}</span> 
+                          Ganancia Total:{" "}
+                          <span className="font-bold text-xl">
+                            {parseFloat(gananciaTotal).toFixed(2)}
+                          </span>
                         </p>
                       </div>
                     </div>
